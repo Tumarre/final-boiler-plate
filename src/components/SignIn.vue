@@ -14,7 +14,7 @@
         <div class="flex justify-center text-center mt-20">
           <label class="m-4" for="">Email</label>
           <input
-            class="px-20 p-4"
+            class="px-20 p-4 rounded-lg"
             type="email"
             placeholder="susuusus@gmail.com"
             v-model="email"
@@ -27,7 +27,7 @@
           </div>
           <div class="">
             <input
-              class="px-20 p-4"
+              class="px-20 p-4 rounded-lg"
               :type="passwordFieldType"
               onpaste="return false"
               placeholder="*********"
@@ -43,14 +43,20 @@
           </div>
         </div>
         <div class="flex justify-center">
-          <button class="" type="submit">Sign In</button>
+          <button
+            class="rounded-lg bg-[#EB5E28] text-[#FFFCF2] p-3"
+            type="submit"
+          >
+            Sign In
+          </button>
         </div>
       </div>
-      <p class="">
-        <span class="">Don’t have an account? </span>
-
-        <PersonalRouter :route="route" :buttonText="buttonText" />
-      </p>
+      <div>
+        <p class="flex justify-center">
+          <span class="m-2">Don’t have an account? </span>
+          <PersonalRouter :route="route" :buttonText="buttonText" />
+        </p>
+      </div>
     </form>
   </div>
 </template>
@@ -65,7 +71,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Test the Sign Up Route";
+const buttonText = "Sign Up";
 
 // Input Fields
 const email = ref("");
