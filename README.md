@@ -75,4 +75,8 @@ Hacer las rutas
 
 ## Day 2
 
+Hacer el diseño
+
+Elegir una paleta de colores
+
 ![figmausususu](/src/assets/Capturafigma.PNG)
