@@ -1,45 +1,62 @@
 <template>
-  <div>Sign Up</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <p>Good Music, Patience and a lot effort</p>
-  <p>Keep calm and code on!</p>
-
-  <form @submit.prevent="signUp">
-    <div class="">
-      <label class="" for="">Email</label>
-      <input
-        class=""
-        type="email"
-        placeholder="dave@wuTangfinancial.com"
-        v-model="email"
-        id="email"
-      />
+  <div class="bg-[#CCC5B9]">
+    <div class="flex justify-around p-8">
+      <div>
+        <img class="w-8 flex mr-4" src="../assets/todologo.png" alt="" />
+      </div>
+      <div>Sign Up</div>
+      <PersonalRouter :route="route" :buttonText="buttonText" />
     </div>
-    <div class="">
-      <label class="" for="">Password</label>
-      <input
-        class=""
-        type="password"
-        placeholder="************"
-        v-model="password"
-        id="password"
-      />
-    </div>
-    <div class="">
-      <label class="" for="">Confirm Password</label>
-      <input
-        class=""
-        type="password"
-        placeholder="************"
-        v-model="confirmPassword"
-        id="confirmPassword"
-      />
-    </div>
-    <button class="" type="submit">Sign Up</button>
-    <p class="">
-      <span class="">Have an account? </span>
-    </p>
-  </form>
+    <form @submit.prevent="signUp">
+      <div class="flex justify-center m-8 flex-col">
+        <div class="flex justify-center text-center mt-20">
+          <label class="m-4" for="">Email</label>
+          <input
+            class="px-20 p-4 rounded-lg"
+            type="email"
+            placeholder="dave@wuTangfinancial.com"
+            v-model="email"
+            id="email"
+          />
+        </div>
+      </div>
+      <div class="flex justify-center m-8">
+        <div class="">
+          <label class="m-4" for="">Password</label>
+          <input
+            class="px-20 p-4 rounded-lg"
+            type="password"
+            placeholder="************"
+            v-model="password"
+            id="password"
+          />
+        </div>
+      </div>
+      <div class="flex justify-center m-8">
+        <div class="">
+          <label class="m-4" for="">Confirm Password</label>
+          <input
+            class="px-20 p-4 rounded-lg"
+            type="password"
+            placeholder="************"
+            v-model="confirmPassword"
+            id="confirmPassword"
+          />
+        </div>
+      </div>
+      <div class="flex justify-center m-8">
+        <button
+          class="rounded-lg bg-[#EB5E28] text-[#FFFCF2] p-3"
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </div>
+      <p class="">
+        <span class="">Have an account? </span>
+      </p>
+    </form>
+  </div>
 </template>
 
 <script setup>

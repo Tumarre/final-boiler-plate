@@ -1,50 +1,58 @@
 <template>
-  <div>Sign In</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <p>Time to build up the Final Project!</p>
-  <p class="wu-text">Wu Tang Forever</p>
-  <p v-if="errorMsg" class="">
-    {{ errorMsg }}
-  </p>
-  <form @submit.prevent="signIn">
-    <div class="">
-      <label class="" for="">Email</label>
-      <input
-        class=""
-        type="email"
-        placeholder="susuusus@gmail.com"
-        v-model="email"
-        id="email"
-      />
-    </div>
-    <div class="mb-4">
-      <label class="" for="">Password</label>
-
-      <div class="">
-        <input
-          class=""
-          :type="passwordFieldType"
-          onpaste="return false"
-          placeholder="*********"
-          v-model="password"
-          id="password"
-        />
-        <span class="">
-          <EyeIcon
-            :class="[passwordFieldIcon]"
-            @click.prevent="hidePassword = !hidePassword"
-          />
-        </span>
-      </div>
-    </div>
-
-    <button class="" type="submit">Sign In</button>
-    <p class="">
-      <span class="">Don’t have an account? </span>
-
+  <div class="bg-[#FFFCF2]">
+    <div class="flex justify-around p-8">
+      <div>Sign In</div>
       <PersonalRouter :route="route" :buttonText="buttonText" />
+      <p>Time to build up the Final Project!</p>
+      <p class="wu-text">Wu Tang Forever</p>
+    </div>
+    <p v-if="errorMsg" class="">
+      {{ errorMsg }}
     </p>
-  </form>
+    <form @submit.prevent="signIn">
+      <div class="flex justify-center m-8 flex-col">
+        <div class="flex justify-center text-center mt-20">
+          <label class="m-4" for="">Email</label>
+          <input
+            class="px-20 p-4"
+            type="email"
+            placeholder="susuusus@gmail.com"
+            v-model="email"
+            id="email"
+          />
+        </div>
+        <div class="flex justify-center m-8">
+          <div class="">
+            <label class="m-4" for="">Password</label>
+          </div>
+          <div class="">
+            <input
+              class="px-20 p-4"
+              :type="passwordFieldType"
+              onpaste="return false"
+              placeholder="*********"
+              v-model="password"
+              id="password"
+            />
+            <span class="">
+              <EyeIcon
+                :class="[passwordFieldIcon]"
+                @click.prevent="hidePassword = !hidePassword"
+              />
+            </span>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button class="" type="submit">Sign In</button>
+        </div>
+      </div>
+      <p class="">
+        <span class="">Don’t have an account? </span>
+
+        <PersonalRouter :route="route" :buttonText="buttonText" />
+      </p>
+    </form>
+  </div>
 </template>
 
 <script setup>
@@ -93,28 +101,4 @@ const signIn = async () => {
 };
 </script>
 
-<style>
-.wu-text {
-  color: black;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-}
-.input {
-  color: black;
-  margin-bottom: 1rem;
-}
-.button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-</style>
+<style></style>
