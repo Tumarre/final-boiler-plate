@@ -2,13 +2,48 @@
 // const emit = defineEmits([ENTER - EMITS - HERE]);
 
 // const props = defineProps(["ENTER-PROP-HERE"]);
+const props = defineProps({
+  task: Object,
+});
 </script>
 
 <template>
-  <div>Task Item Component</div>
+  <p></p>
+  <p></p>
+  <div class="container">
+    <table class="table table-bordered mt-5 bg-[#CCC5B9] border-1" id="bordeee">
+      <tbody>
+        <tr>
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>
+            <div class="text-center">
+              <span class="fa fa-check"></span>
+            </div>
+          </td>
+          <td>
+            <div class="text-center">
+              <span class="fa fa-pen"></span>
+            </div>
+          </td>
+          <td>
+            <div>
+              <div class="text-center">
+                <span class="fa fa-trash"></span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
-<style></style>
+<style>
+#bordeee {
+  border-color: #252422;
+}
+</style>
 
 <!-- 
 **Hints**

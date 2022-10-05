@@ -6,7 +6,10 @@
       alt="To Do List Logo"
     />
     <h1 class="text-4xl flex flex-row text-left text-[#403D39]">VueToDo</h1>
-    <button class="flex flex-row text-[#EB5E28]" @click="signOut">
+    <button
+      class="flex flex-row bg-[#eb5f28] text-white p-2.5 rounded"
+      @click="signOut"
+    >
       Sign out
     </button>
   </div>

@@ -3,13 +3,32 @@ import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
+import { useTaskStore } from "../stores/task";
+import { ref } from "vue";
+
+const arrayTask = ref(null);
+
+async function getTask() {
+  arrayTask.value = await useTaskStore().fetchTasks();
+  console.log(arrayTask);
+}
+
+getTask();
+
+const handleClick = async (title, description) => {
+  await useTaskStore().addTask(title, description);
+  getTask();
+};
+
+// const useTaskStoresss = useTaskStore().addTask();
+// console.log("this is what im importing", useTaskStoresss);
 </script>
 
 <template>
   <div class="bg-[#FFFCF2]">
     <Nav />
-    <NewTask />
-    <TaskItem />
+    <NewTask @handleClick="handleClick" />
+    <TaskItem v-for="task in arrayTask" :key="task" :task="task" />
     <Footer />
   </div>
 </template>
