@@ -9,6 +9,8 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import App from "./App.vue";
 import router from "./router";
 
+import vfmPlugin from "vue-final-modal";
+
 import "./assets/main.css";
 const pinia = createPinia();
 // createApp(App).mount("#app");

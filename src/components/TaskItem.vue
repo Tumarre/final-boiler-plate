@@ -5,11 +5,16 @@
 const props = defineProps({
   task: Object,
 });
+const thisTask = props.task;
+// console.log(thisTask.id);
+const emit = defineEmits(["editTaskksss"]);
+function editTasksPerEXemple() {
+  console.log("xupapitos");
+  emit("editTaskksss", thisTask.title, thisTask.description, thisTask.id);
+}
 </script>
 
 <template>
-  <p></p>
-  <p></p>
   <div class="container">
     <table class="table table-bordered mt-5 bg-[#CCC5B9] border-1" id="bordeee">
       <tbody>
@@ -22,8 +27,8 @@ const props = defineProps({
             </div>
           </td>
           <td>
-            <div class="text-center">
-              <span class="fa fa-pen"></span>
+            <div class="text-center" @click="editTasksPerEXemple()">
+              <button class="fa fa-pen"></button>
             </div>
           </td>
           <td>
