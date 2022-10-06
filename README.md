@@ -80,3 +80,11 @@ Hacer el diseño
 Elegir una paleta de colores
 
 ![figmausususu](/src/assets/Capturafigma.PNG)
+
+## Day 3
+
+Poder crear tareas
+
+Darle un poco de diseño
+
+Agregar botones
