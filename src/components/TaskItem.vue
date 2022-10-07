@@ -15,32 +15,24 @@ function editTasksPerEXemple() {
 </script>
 
 <template>
-  <div class="container">
-    <table class="table table-bordered mt-5 bg-[#CCC5B9] border-1" id="bordeee">
-      <tbody>
-        <tr>
-          <td>{{ task.title }}</td>
-          <td>{{ task.description }}</td>
-          <td>
-            <div class="text-center">
-              <span class="fa fa-check"></span>
-            </div>
-          </td>
-          <td>
-            <div class="text-center" @click="editTasksPerEXemple()">
-              <button class="fa fa-pen"></button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <div class="text-center">
-                <span class="fa fa-trash"></span>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="card m-20 container" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{ task.title }}</h5>
+      <p class="card-text text-center">
+        {{ task.description }}
+      </p>
+      <div class="items-center flex flex-row justify-around">
+        <div class="text-center">
+          <button class="card-link fa fa-trash"></button>
+        </div>
+        <div class="text-center flex" @click="editTasksPerEXemple()">
+          <button class="card-link fa fa-pen"></button>
+        </div>
+        <div class="text-center flex">
+          <button class="card-link fa fa-check"></button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

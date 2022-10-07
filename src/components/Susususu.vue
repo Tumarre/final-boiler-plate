@@ -1,49 +1,82 @@
 <template>
   <div id="app">
-    <h2 contenteditable @input="updateContent($event, 'heading')">
-      {{ contentHeadingTemp }}
-    </h2>
-    <p contenteditable @input="updateContent($event, 'paragraph')">
-      {{ contentMessageTemp }}
-    </p>
+    <!-- <transition name="fade"> -->
+      <div class="modal-overlay" v-if="showModal"></div>
+    <!-- </transition> -->
+
+    <!-- <transition name="fade"> -->
+      <div class="modal" v-if="showModal">
+        <h1>Titulo</h1>
+        <p>Interior del modal</p>
+        <button @click="closetask()">Cerrar el Modal</button>
+      </div>
+    <!-- </transition> -->
+
+    <button @click="showTask()">Abrir el Modal</button>
   </div>
 </template>
 
-<script>
-const headingText = "Hello from nightprogrammer.com!";
-const contentText =
-  "Feel free to click on the title above or this paragraph, to make changes!";
+<script setup>
+import { ref } from "vue";
+// export default {
+//   name: "App",
+//   data() {
+//     return {
+//       showModal: false,
+//     };
+//   },
+// };
+const showModal = ref(false);
 
-export default {
-  data() {
-    return {
-      contentHeading: headingText,
-      contentHeadingTemp: headingText,
-      contentMessage: contentText,
-      contentMessageTemp: contentText,
-    };
-  },
-  methods: {
-    updateContent(e, contentType) {
-      const inputText = e.target.innerText;
-      switch (contentType) {
-        case "heading":
-          this.contentHeading = inputText;
-          break;
-        case "paragraph":
-          this.contentMessage = inputText;
-          break;
-        default:
-          break;
-      }
-    },
-  },
-};
+function showTask() {
+  showModal.value = true;
+  console.log(showModal.value);
+}
+function closetask() {
+  showModal.value = false;
+  console.log(showModal.value);
+}
 </script>
 
-<style scoped>
-#app {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+<style>
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-left: 100px;
+  display: block;
+  padding: 15px 20px;
+  background-color: orange;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+} 
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: rgb(101, 73, 73);
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 15px;
+  background-color: aquamarine;
+  z-index: 101;
+}
+
+fade-enter {
+
 }
 </style>
