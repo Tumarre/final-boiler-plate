@@ -1,17 +1,41 @@
 <template>
-  <div class="bg-[#CCC5B9] flex p-10 items-center justify-around">
-    <img
-      class="w-8 flex mr-4"
-      src="../assets/todologo.png"
-      alt="To Do List Logo"
-    />
-    <h1 class="text-4xl flex flex-row text-left text-[#403D39]">VueToDo</h1>
-    <button
-      class="flex flex-row bg-[#eb5f28] text-white p-2.5 rounded"
-      @click="signOut"
+  <header
+    class="relative flex items-center justify-center h-screen mb-12 overflow-hidden"
+  >
+    <div
+      class="relative z-30 p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl"
     >
-      Sign out
-    </button>
+      Welcome to my site!
+    </div>
+    <video
+      autoplay
+      loop
+      muted
+      class="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+    >
+      <source src="../assets/20221010-143958.webm" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </header>
+  <div>
+    <nav class="navbar navbar-light bg-[#050D00] justify-content-between p-5">
+      <a href="/" class="navbar-brand ml-2 text-white">To Do List</a>
+      <form class="form-inline">
+        <button
+          class="flex flex-row bg-[#F2441D] text-white p-2.5 rounded mr-2 shadow-[8px_8px_5px_##ccc5b9]"
+          @click="signOut"
+        >
+          Sign out
+        </button>
+      </form>
+    </nav>
+    <video autoplay muted loop id="myVideo">
+      <source
+        src="../assets/20221010-143958.webm"
+        type="video/mp4"
+        class="w-full md:w-auto flex"
+      />
+    </video>
   </div>
 </template>
 
@@ -37,4 +61,9 @@ const signOut = async () => {
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 </script>
 
-<style></style>
+<style>
+video {
+  height: 20%;
+  z-index: -100;
+}
+</style>

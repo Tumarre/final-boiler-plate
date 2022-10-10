@@ -5,7 +5,6 @@ import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import { useTaskStore } from "../stores/task";
 import { ref } from "vue";
-import Susususu from "../components/Susususu.vue";
 
 const arrayTask = ref(null);
 
@@ -27,21 +26,30 @@ const editTaskksss = async (title, description, id) => {
   getTask();
 };
 
+const deleteTask = async (id) => {
+  await useTaskStore().deleteTaskss(id);
+  getTask();
+  console.log("holaaaaaa" + id);
+};
+
 // const useTaskStoresss = useTaskStore().addTask();
 // console.log("this is what im importing", useTaskStoresss);
 </script>
 
 <template>
-  <div class="bg-[#FFFCF2]">
+  <div class="bg-[#F2E9BD]">
     <Nav />
     <NewTask @handleClick="handleClick" />
-    <TaskItem
-      @editTaskksss="editTaskksss"
-      v-for="task in arrayTask"
-      :key="task"
-      :task="task"
-    />
-    <Susususu />
+    <div class="flex flex-wrap mx-auto">
+      <TaskItem
+        @editTaskksss="editTaskksss"
+        v-for="task in arrayTask"
+        :key="task"
+        :task="task"
+        @deleteTasks="deleteTask"
+      />
+    </div>
+
     <Footer />
   </div>
 </template>

@@ -1,5 +1,17 @@
 <script setup>
-// const emit = defineEmits([ENTER - EMITS - HERE]);
+// Modal
+import { ref } from "vue";
+
+const showModal = ref(false);
+
+function showTask() {
+  showModal.value = true;
+  console.log(showModal.value);
+}
+function closetask() {
+  showModal.value = false;
+  console.log(showModal.value);
+}
 
 // const props = defineProps(["ENTER-PROP-HERE"]);
 const props = defineProps({
@@ -7,25 +19,31 @@ const props = defineProps({
 });
 const thisTask = props.task;
 // console.log(thisTask.id);
-const emit = defineEmits(["editTaskksss"]);
+function deleteTasksPerExemple() {
+  console.log("lokokokokodelete");
+  emit("deleteTasks", thisTask.id);
+  console.log(thisTask.id);
+}
+const emit = defineEmits(["editTaskksss", "deleteTasksss"]);
+
 function editTasksPerEXemple() {
   console.log("xupapitos");
-  emit("editTaskksss", thisTask.title, thisTask.description, thisTask.id);
+  emit("editTaskksss", titleEdit.value, descriptionEdit.value, thisTask.id);
 }
 </script>
 
 <template>
-  <div class="card m-20 container" style="width: 18rem">
+  <div class="card w-full md:w-1/2">
     <div class="card-body">
-      <h5 class="card-title text-center">{{ task.title }}</h5>
-      <p class="card-text text-center">
+      <h5 class="card-title text-center text-black">{{ task.title }}</h5>
+      <p class="card-text text-center text-black">
         {{ task.description }}
       </p>
       <div class="items-center flex flex-row justify-around">
-        <div class="text-center">
+        <div class="text-center" @click="deleteTasksPerExemple()">
           <button class="card-link fa fa-trash"></button>
         </div>
-        <div class="text-center flex" @click="editTasksPerEXemple()">
+        <div class="text-center flex" @click="showTask()">
           <button class="card-link fa fa-pen"></button>
         </div>
         <div class="text-center flex">
@@ -34,12 +52,103 @@ function editTasksPerEXemple() {
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" v-if="showModal">
+    <div
+      class="bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 -bottom-2/4 left-0"
+    >
+      <div class="bg-white px-16 py-14 rounded-md text-center top-96 absolute">
+        <div class="">
+          <input
+            id="titleEdit"
+            type="text"
+            class="m-2 text-xl mb-4 font-bold text-slate-500 border-r-slate-900"
+            placeholder="Click to edit title"
+          />
+          <br />
+          <input
+            id="descriptionEdit"
+            class="text-xl mb-4 font-bold text-slate-500 border-r-slate-900"
+            placeholder="Click to edit description"
+          />
+        </div>
+        <div class="flex-row-reverse flex justify-items-center">
+          <button
+            class="bg-[#EB5E28] px-7 py-2 rounded-md text-md text-white font-semibold flex"
+            @click="editTasksPerEXemple()"
+          >
+            Ok
+          </button>
+          <button
+            class="bg-black px-4 py-2 ml-2 rounded-md text-md text-white mt-2 flex"
+            @click="closetask()"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style>
+* {
+  padding: 0;
+  margin: 0;
+}
+
 #bordeee {
   border-color: #252422;
 }
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-left: 100px;
+  display: block;
+  padding: 15px 20px;
+  background-color: orange;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 8px 8px 5px #ccc5b9;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: rgb(101, 73, 73);
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 15px;
+  background-color: aquamarine;
+  z-index: 101;
+}
+
+.card {
+  -webkit-backdrop-filter: blur(27px);
+  backdrop-filter: blur(27px);
+  border: 1px solid rgba(37, 36, 34, 0.25);
+  box-shadow: 10px 10px 20px #314011;
+}
+
+/* fade-enter {
+
+} */
 </style>
 
 <!-- 

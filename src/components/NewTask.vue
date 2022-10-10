@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="text-center mt-5">To do sususu</h2>
+    <h2 class="text-center mt-5 font-thunder">To do sususu</h2>
     <!-- inputsssss -->
 
     <div class="flex flex-col">
@@ -13,7 +13,7 @@
       <input
         v-model="description"
         type="text"
-        placeholder="Description"
+        placeholder="Enter Description"
         class="form-control m-3"
       />
       <div class="text-center">
@@ -87,7 +87,9 @@ function addTaskPerExemple() {
 
 <style>
 #submitbtn {
-  background-color: #eb5e28;
+  background-color: #f2441d;
   color: white;
+  font-weight: bold;
+  box-shadow: 10px 10px 20px #314011;
 }
 </style>

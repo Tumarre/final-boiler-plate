@@ -27,6 +27,16 @@ export const useTaskStore = defineStore("tasks", {
         },
       ]);
     },
+
+    // delete task
+    async deleteTaskss(id) {
+      const { data, error } = await supabase
+        .from("tasks")
+        .delete()
+        .match({ id });
+      console.log("estoyborrando");
+    },
+
     //susuususus edit
     async editTask(title, description, id) {
       try {

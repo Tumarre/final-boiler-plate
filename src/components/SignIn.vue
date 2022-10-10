@@ -2,9 +2,7 @@
   <div class="bg-[#FFFCF2]">
     <div class="flex justify-around p-8">
       <div>Sign In</div>
-      <PersonalRouter :route="route" :buttonText="buttonText" />
       <p>Time to build up the Final Project!</p>
-      <p class="wu-text">Wu Tang Forever</p>
     </div>
     <p v-if="errorMsg" class="">
       {{ errorMsg }}
