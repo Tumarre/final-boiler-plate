@@ -29,13 +29,6 @@
         </button>
       </form>
     </nav>
-    <video autoplay muted loop id="myVideo">
-      <source
-        src="../assets/20221010-143958.webm"
-        type="video/mp4"
-        class="w-full md:w-auto flex"
-      />
-    </video>
   </div>
 </template>
 
