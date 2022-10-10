@@ -3,10 +3,16 @@
     class="relative flex items-center justify-center h-screen mb-12 overflow-hidden"
   >
     <div
-      class="relative z-30 p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl"
+      class="flex font-thunder z-30 p-5 text-[300px] text-white bg-opacity-50 rounded-xl"
     >
-      Welcome to my site!
+      Tood
+      <p
+        class="flex font-thunder z-30 p-5 text-[40px] text-white bg-opacity-50 rounded-xl mt-0"
+      >
+        TO DO LIST
+      </p>
     </div>
+
     <video
       autoplay
       loop
