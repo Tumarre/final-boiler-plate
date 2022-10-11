@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h2 class="text-center mt-5 font-thunder">To do sususu</h2>
+    <h2 class="text-center mt-5 font-thunder text-[#BFC5D9] text-5xl">
+      A fondo titu
+    </h2>
     <!-- inputsssss -->
 
     <div class="flex flex-col">
@@ -8,13 +10,13 @@
         v-model="title"
         type="text"
         placeholder="Enter Task"
-        class="form-control m-3 items-center"
+        class="form-control mb-2 items-center"
       />
       <input
         v-model="description"
         type="text"
         placeholder="Enter Description"
-        class="form-control m-3"
+        class="form-control m-auto"
       />
       <div class="text-center">
         <button

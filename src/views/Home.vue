@@ -5,6 +5,7 @@ import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import { useTaskStore } from "../stores/task";
 import { ref } from "vue";
+import Videoos from "../components/Videoos.vue";
 
 const arrayTask = ref(null);
 
@@ -29,7 +30,14 @@ const editTaskksss = async (title, description, id) => {
 const deleteTask = async (id) => {
   await useTaskStore().deleteTaskss(id);
   getTask();
-  console.log("holaaaaaa" + id);
+};
+
+const isDoneHome = async (task) => {
+  let taskId = task.id;
+  let boolean = !task.is_complete;
+  await useTaskStore().isDone(taskId, boolean);
+  getTask();
+  console.log("isDoneHome");
 };
 
 // const useTaskStoresss = useTaskStore().addTask();
@@ -37,7 +45,8 @@ const deleteTask = async (id) => {
 </script>
 
 <template>
-  <div class="bg-[#F2E9BD]">
+  <div class="bg-[#262626]">
+    <Videoos />
     <Nav />
     <NewTask @handleClick="handleClick" />
     <div class="flex flex-wrap mx-auto">
@@ -46,6 +55,7 @@ const deleteTask = async (id) => {
         v-for="task in arrayTask"
         :key="task"
         :task="task"
+        @isDoneeee="isDoneHome"
         @deleteTasks="deleteTask"
       />
     </div>

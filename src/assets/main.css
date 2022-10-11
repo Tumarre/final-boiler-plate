@@ -9,6 +9,10 @@
   src: url(../assets/fonts/OpenType-TT/Thunder-BoldLCItalic.ttf);
 }
 
+@font-face {
+  font-family: 'thunderBlackOTF';
+  src: url(../assets/fonts/OpenType-PS/Thunder-ExtraBoldLC.otf);
+}
 
 /* a,
 .green {

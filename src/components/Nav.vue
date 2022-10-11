@@ -1,41 +1,46 @@
 <template>
-  <header
-    class="relative flex items-center justify-center h-screen mb-12 overflow-hidden"
-  >
-    <div
-      class="flex font-thunder z-30 p-5 text-[300px] text-white bg-opacity-50 rounded-xl"
-    >
-      Tood
-      <p
-        class="flex font-thunder z-30 p-5 text-[40px] text-white bg-opacity-50 rounded-xl mt-0"
-      >
+  <!-- <div class="text-center">
+    <nav class="navbar navbar-light bg-[#050D00] justify-content-between p-5">
+      <a href="/" class="navbar-brand ml-2 text-white font-thunderOTF">TooD</a>
+      <p class="text-center font-thunderOTF ml-2 text-[#bfc5d987]">
         TO DO LIST
       </p>
-    </div>
-
-    <video
-      autoplay
-      loop
-      muted
-      class="absolute z-10 w-auto min-w-full min-h-full max-w-none"
-    >
-      <source src="../assets/20221010-143958.webm" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </header>
-  <div>
-    <nav class="navbar navbar-light bg-[#050D00] justify-content-between p-5">
-      <a href="/" class="navbar-brand ml-2 text-white">To Do List</a>
       <form class="form-inline">
         <button
-          class="flex flex-row bg-[#F2441D] text-white p-2.5 rounded mr-2 shadow-[8px_8px_5px_##ccc5b9]"
+          class="flex flex-row bg-[#262626] text-white p-2.5 rounded mr-2 shadow-[8px_8px_5px_##ccc5b9]"
           @click="signOut"
         >
           Sign out
         </button>
       </form>
     </nav>
-  </div>
+  </div> -->
+  <nav class="flex items-center justify-between flex-wrap bg-black p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <svg
+        class="fill-current h-8 w-8 mr-2"
+        width="54"
+        height="54"
+        viewBox="0 0 54 54"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="" />
+      </svg>
+      <span class="font-semibold text-xl tracking-tight">Tood</span>
+    </div>
+    <div class="block lg:hidden">
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow"></div>
+      <div>
+        <a
+          href="#"
+          class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-teal-500 hover:bg-white lg:mt-0"
+          >Sing Out</a
+        >
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script setup>
@@ -60,9 +65,4 @@ const signOut = async () => {
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 </script>
 
-<style>
-video {
-  height: 20%;
-  z-index: -100;
-}
-</style>
+<style scoped></style>

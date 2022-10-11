@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       thunder: ["thunderBlack", "san-serif"],
+      thunderOTF: ["thunderBlackOTF", "san-serif"],
     },
   },
   variants: {

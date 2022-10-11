@@ -24,18 +24,29 @@ function deleteTasksPerExemple() {
   emit("deleteTasks", thisTask.id);
   console.log(thisTask.id);
 }
-const emit = defineEmits(["editTaskksss", "deleteTasksss"]);
+const emit = defineEmits(["editTaskksss", "deleteTasks", "isDoneeee"]);
 
 function editTasksPerEXemple() {
   console.log("xupapitos");
   emit("editTaskksss", titleEdit.value, descriptionEdit.value, thisTask.id);
 }
+
+function isDoneeee() {
+  emit("isDoneeee", thisTask);
+  console.log(thisTask);
+  console.log("click me");
+}
 </script>
 
 <template>
-  <div class="card w-full md:w-1/2">
+  <div class="card m-1 w-2/6">
     <div class="card-body">
-      <h5 class="card-title text-center text-black">{{ task.title }}</h5>
+      <h5
+        :class="task.is_complete ? 'text-green-500 line-through' : 'text-black'"
+        class="card-title text-center"
+      >
+        {{ task.title }}
+      </h5>
       <p class="card-text text-center text-black">
         {{ task.description }}
       </p>
@@ -46,7 +57,7 @@ function editTasksPerEXemple() {
         <div class="text-center flex" @click="showTask()">
           <button class="card-link fa fa-pen"></button>
         </div>
-        <div class="text-center flex">
+        <div class="text-center flex" @click="isDoneeee()">
           <button class="card-link fa fa-check"></button>
         </div>
       </div>
