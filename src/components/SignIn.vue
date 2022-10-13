@@ -1,62 +1,4 @@
 <template>
-  <!-- <div class="bg-[#FFFCF2]">
-    <div class="flex justify-around p-8">
-      <div>Sign In</div>
-      <p>Time to build up the Final Project!</p>
-    </div>
-    <p v-if="errorMsg" class="">
-      {{ errorMsg }}
-    </p>
-    <form @submit.prevent="signIn">
-      <div class="flex justify-center m-8 flex-col">
-        <div class="flex justify-center text-center mt-20">
-          <label class="m-4" for="">Email</label>
-          <input
-            class="px-20 p-4 rounded-lg"
-            type="email"
-            placeholder="susuusus@gmail.com"
-            v-model="email"
-            id="email"
-          />
-        </div>
-        <div class="flex justify-center m-8">
-          <div class="">
-            <label class="m-4" for="">Password</label>
-          </div>
-          <div class="">
-            <input
-              class="px-20 p-4 rounded-lg"
-              :type="passwordFieldType"
-              onpaste="return false"
-              placeholder="*********"
-              v-model="password"
-              id="password"
-            />
-            <span class="">
-              <EyeIcon
-                :class="[passwordFieldIcon]"
-                @click.prevent="hidePassword = !hidePassword"
-              />
-            </span>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <button
-            class="rounded-lg bg-[#EB5E28] text-[#FFFCF2] p-3"
-            type="submit"
-          >
-            Sign In
-          </button>
-        </div>
-      </div>
-      <div>
-        <p class="flex justify-center">
-          <span class="m-2">Don’t have an account? </span>
-          <PersonalRouter :route="route" :buttonText="buttonText" />
-        </p>
-      </div>
-    </form>
-  </div> -->
   <section class="vh-100" style="background-color: #262626">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -75,7 +17,7 @@
                 <div class="card-body p-4 p-lg-5 text-black">
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <img
-                      src="../assets/Frame 2222.png"
+                      src="../../public/logotodo.png"
                       alt="logoTood"
                       class="w-25"
                     />
