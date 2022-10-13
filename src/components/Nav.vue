@@ -1,21 +1,11 @@
 <template>
-  <!-- <div class="text-center">
-    <nav class="navbar navbar-light bg-[#050D00] justify-content-between p-5">
-      <a href="/" class="navbar-brand ml-2 text-white font-thunderOTF">TooD</a>
-      <p class="text-center font-thunderOTF ml-2 text-[#bfc5d987]">
-        TO DO LIST
-      </p>
-      <form class="form-inline">
-        <button
-          class="flex flex-row bg-[#262626] text-white p-2.5 rounded mr-2 shadow-[8px_8px_5px_##ccc5b9]"
-          @click="signOut"
-        >
-          Sign out
-        </button>
-      </form>
-    </nav>
-  </div> -->
-  <nav class="flex items-center justify-between flex-wrap bg-black p-6">
+  <nav
+    class="flex items-center justify-between flex-wrap bg-black p-6 overflow-hidden"
+  >
+    <div class="bola">
+      <img class="w-14" src="../assets/pinzza.png" alt="pinza" />
+    </div>
+    <div class="triangulo"></div>
     <div class="flex items-center flex-shrink-0 text-white mr-6">
       <svg
         class="fill-current h-8 w-8 mr-2"
@@ -28,8 +18,7 @@
       </svg>
       <span class="font-semibold text-xl tracking-tight">Tood</span>
     </div>
-    <div class="block lg:hidden">
-    </div>
+    <div class="block lg:hidden"></div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-sm lg:flex-grow"></div>
       <div>
@@ -54,15 +43,111 @@ const signOut = async () => {
     console.log("this is my error", error);
   }
 };
-//constant to save a variable that will hold the use router method
-
-// constant to save a variable that will get the user from store with a computed function imported from vue
-
-// constant that calls user email from the useUSerStore
-
-// constant that saves the user email and cleans out the @client from the user
-
-// async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 </script>
 
-<style scoped></style>
+<style scoped>
+.pelitos {
+  width: 3px;
+  height: 25px;
+  background-color: green;
+}
+.pelitos:nth-child(1) {
+  transform: rotate(-5deg);
+  position: relative;
+  left: 0%;
+  background-color: blueviolet;
+}
+.pelitos:nth-child(2) {
+  transform: rotate(20deg);
+  position: relative;
+  top: 60%;
+  left: 0%;
+  background-color: chocolate;
+}
+.pelitos:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -95%;
+  left: 90%;
+  background-color: crimson;
+}
+
+.triangulo {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 16px 27.7px 16px;
+  border-color: transparent transparent #ffffff transparent;
+  position: absolute;
+  z-index: 100;
+  top: -10vh;
+  left: 90vw;
+  animation: grap 1 10s linear;
+}
+
+.bola {
+  /* width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 10px 0 10px;
+  border-color: #ffffff transparent transparent transparent; */
+  position: absolute;
+  z-index: 100;
+  top: 0vh;
+  left: 1vw;
+  animation: palante 1 10s linear;
+}
+
+@keyframes palante {
+  /* from {
+    top: 1vh;
+    left: 1vw;
+  }
+  to {
+    top: 1vh;
+    left: 80vw;
+  } */
+  0% {
+    top: 0vh;
+    left: 1vw;
+  }
+  20% {
+    top: 0vh;
+    left: 87vw;
+  }
+  40% {
+    top: 44vh;
+    left: 87vw;
+  }
+  50% {
+    top: 20vh;
+    left: 87vw;
+  }
+  60% {
+    top: 0vh;
+    left: 87vw;
+  }
+}
+@keyframes grap {
+  0% {
+    top: 50vh;
+    left: 90vw;
+  }
+  40% {
+    top: 50vh;
+    left: 90vw;
+  }
+  50% {
+    top: 30vh;
+    left: 90vw;
+  }
+  70% {
+    top: 100vh;
+    left: 90vw;
+  }
+  100% {
+    top: 100vh;
+    left: 90vw;
+  }
+}
+</style>

@@ -1,7 +1,5 @@
 <template>
-  <router-link class="rounded-lg bg-[#EB5E28] text-[#FFFCF2] p-3" :to="route">{{
-    buttonText
-  }}</router-link>
+  <router-link :to="route" style="color: #393f81">Register here </router-link>
 </template>
 
 <script setup>
