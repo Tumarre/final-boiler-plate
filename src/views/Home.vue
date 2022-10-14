@@ -40,16 +40,24 @@ const isDoneHome = async (task) => {
   console.log("isDoneHome");
 };
 
+const showHeader = ref(true);
+
+function hideHeader() {
+  setTimeout(() => {
+    showHeader.value = false;
+  }, 9000);
+}
+hideHeader();
 // const useTaskStoresss = useTaskStore().addTask();
 // console.log("this is what im importing", useTaskStoresss);
 </script>
 
 <template>
   <div class="bg-[#262626]">
-    <Videoos />
+    <Videoos v-if="showHeader" />
     <Nav />
     <NewTask @handleClick="handleClick" />
-    <div class="flex flex-wrap mx-auto">
+    <div class="flex flex-wrap justify-center mx-auto w-100">
       <TaskItem
         @editTaskksss="editTaskksss"
         v-for="task in arrayTask"
@@ -59,8 +67,9 @@ const isDoneHome = async (task) => {
         @deleteTasks="deleteTask"
       />
     </div>
-
-    <Footer />
+    <div class="sm:mt-[180px]">
+      <Footer />
+    </div>  
   </div>
 </template>
 

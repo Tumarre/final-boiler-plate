@@ -89,9 +89,14 @@ function addTaskPerExemple() {
 
 <style>
 #submitbtn {
-  background-color: #f2441d;
-  color: white;
+  background-color: #262626;
+  color: #f2f2f2;
   font-weight: bold;
-  box-shadow: 10px 10px 20px #314011;
+  border: 2px solid #ffff;
+}
+
+#submitbtn :hover {
+  background-color: #f2f2f2;
+  color: #262626;
 }
 </style>

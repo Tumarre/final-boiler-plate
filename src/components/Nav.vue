@@ -18,13 +18,13 @@
       </svg>
       <span class="font-semibold text-xl tracking-tight">Tood</span>
     </div>
-    <div class="block lg:hidden"></div>
+    <div class="block lg:hidden" id="navBarSu"></div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-sm lg:flex-grow"></div>
       <div>
         <a
           href="#"
-          class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-teal-500 hover:bg-white lg:mt-0"
+          class="inline-block text-xl px-4 py-2 leading-none rounded text-black bg-[#F2F2F2] lg:mt-0 hover:text-black font-thunder"
           @click="signOut()"
           >Sing Out</a
         >
@@ -44,6 +44,13 @@ const signOut = async () => {
     console.log("this is my error", error);
   }
 };
+
+const navBarSusu = document.getElementById("navBarSu");
+console.log(navBarSusu);
+
+function scrollToNav() {
+  navBarSusu.scrollIntoView({ behavior: "smooth" });
+}
 </script>
 
 <style scoped>
@@ -114,41 +121,42 @@ const signOut = async () => {
   }
   20% {
     top: 0vh;
-    left: 87vw;
+    left: 90vw;
   }
   40% {
-    top: 44vh;
-    left: 87vw;
+    top: 46vh;
+    left: 90vw;
   }
   50% {
     top: 20vh;
-    left: 87vw;
+    left: 90vw;
   }
   60% {
     top: 0vh;
-    left: 87vw;
+    left: 90vw;
   }
 }
 @keyframes grap {
   0% {
     top: 50vh;
-    left: 90vw;
+    left: 91vw;
   }
   40% {
     top: 50vh;
-    left: 90vw;
+    left: 91vw;
   }
   50% {
     top: 30vh;
-    left: 90vw;
+    left: 91vw;
   }
   70% {
-    top: 100vh;
-    left: 90vw;
+    top: 97vh;
+    left: 91vw;
   }
   100% {
-    top: 100vh;
-    left: 90vw;
+    top: 97vh;
+    left: 91vw;
+    scroll-behavior: smooth;
   }
 }
 </style>

@@ -74,7 +74,7 @@
                   <div class="d-flex justify-content-center">
                     <button
                       type="submit"
-                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body ml-0"
+                      class="btn btn-dark btn-block btn-lg gradient-custom-4 text-[#F2F2F2] ml-0"
                     >
                       Register
                     </button>
@@ -136,45 +136,4 @@ async function signUp() {
 }
 </script>
 
-<style scoped>
-.gradient-custom-3 {
-  /* fallback for old browsers */
-  background: #bfc5d9;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(38, 38, 38, 1),
-    rgba(191, 197, 217, 1),
-    rgba(38, 38, 38, 1)
-  );
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to right,
-    rgba(38, 38, 38, 1),
-    rgba(191, 197, 217, 1),
-    rgba(38, 38, 38, 1)
-  );
-}
-.gradient-custom-4 {
-  /* fallback for old browsers */
-  background: #bfc5d9;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(38, 38, 38, 1),
-    rgba(191, 197, 217, 1),
-    rgba(38, 38, 38, 1)
-  );
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to right,
-    rgba(38, 38, 38, 1),
-    rgba(191, 197, 217, 1),
-    rgba(38, 38, 38, 1)
-  );
-}
-</style>
+<style scoped></style>

@@ -39,7 +39,7 @@ function isDoneeee() {
 </script>
 
 <template>
-  <div class="card m-1 w-2/6">
+  <div class="card m-1 w-2/5">
     <div class="card-body">
       <h5
         :class="task.is_complete ? 'text-green-500 line-through' : 'text-black'"
@@ -67,32 +67,37 @@ function isDoneeee() {
   <!-- Modal -->
   <div class="modal-overlay" v-if="showModal">
     <div
-      class="bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 -bottom-2/4 left-0"
+      class="bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 -bottom-0 left-0"
     >
-      <div class="bg-white px-16 py-14 rounded-md text-center top-96 absolute">
+      <div
+        id="modalBorder"
+        class="bg-white px-16 py-14 rounded-md text-center top-64 absolute"
+      >
         <div class="">
+          <p class="font-thunder text-3xl">Click To Edit</p>
           <input
             id="titleEdit"
             type="text"
             class="m-2 text-xl mb-4 font-bold text-slate-500 border-r-slate-900"
-            placeholder="Click to edit title"
+            :placeholder="task.title"
           />
           <br />
           <input
             id="descriptionEdit"
             class="text-xl mb-4 font-bold text-slate-500 border-r-slate-900"
-            placeholder="Click to edit description"
+            :placeholder="task.description"
           />
         </div>
         <div class="flex-row-reverse flex justify-items-center">
           <button
-            class="bg-[#EB5E28] px-7 py-2 rounded-md text-md text-white font-semibold flex"
+            id="botonmodal"
+            class="bg-[#f2f2f2] px-7 py-2 rounded-md text-black text-xl font-semibold flex font-thunder"
             @click="editTasksPerEXemple()"
           >
             Ok
           </button>
           <button
-            class="bg-black px-4 py-2 ml-2 rounded-md text-md text-white mt-2 flex"
+            class="bg-black px-4 py-2 ml-2 rounded-md text-xl text-white mt-2 flex font-thunder"
             @click="closetask()"
           >
             Cancel
@@ -107,6 +112,10 @@ function isDoneeee() {
 * {
   padding: 0;
   margin: 0;
+}
+
+#modalBorder {
+  border: 1px solid #252422;
 }
 
 #bordeee {
@@ -125,7 +134,11 @@ button {
   color: white;
   font-size: 18px;
   font-weight: bold;
-  box-shadow: 8px 8px 5px #ccc5b9;
+  /* box-shadow: 4px 4px 5px #918a7d; */
+}
+
+#botonmodal {
+  border: 2px solid black;
 }
 
 .modal-overlay {
@@ -154,7 +167,6 @@ button {
   -webkit-backdrop-filter: blur(27px);
   backdrop-filter: blur(27px);
   border: 1px solid rgba(37, 36, 34, 0.25);
-  box-shadow: 10px 10px 20px #314011;
 }
 
 /* fade-enter {
